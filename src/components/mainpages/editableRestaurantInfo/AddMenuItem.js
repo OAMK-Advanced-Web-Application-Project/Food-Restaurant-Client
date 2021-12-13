@@ -41,11 +41,6 @@ export default function AddMenuItem(props) {
         description: descriptionReg,
         price: priceReg,
         image: showImageMenu,
-      },
-      {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
       }
     ).then((response) => {
       console.log(showImageMenu);
