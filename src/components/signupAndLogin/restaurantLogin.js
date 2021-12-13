@@ -22,6 +22,11 @@ export default function RestaurantLogin(props) {
           username: usernameLog,
           password: passwordLog,
         },
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
       }
     );
     localStorage.setItem("token", result.data.token);
