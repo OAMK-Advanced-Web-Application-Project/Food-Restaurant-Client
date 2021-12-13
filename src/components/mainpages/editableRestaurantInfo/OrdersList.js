@@ -4,15 +4,12 @@ import Axios from "axios";
 import Constants from "../../Constants.json";
 
 export default function OrdersList() {
-  Axios.defaults.withCredentials = false;
 
   let { id } = useParams();
   const [orderList, setOrderList] = useState([]);
 
   useEffect(() => {
-    Axios.get(Constants.API_ADDRESS + `/getOrderRestaurant/${id}`, {
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
+    Axios.get(Constants.API_ADDRESS + `/getOrderRestaurant/${id}`).then((response) => {
       console.log(response);
       setOrderList(response.data);
     });

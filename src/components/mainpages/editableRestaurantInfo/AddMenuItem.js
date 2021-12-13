@@ -45,7 +45,6 @@ export default function AddMenuItem(props) {
       {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
-          'Content-Type': 'application/json',
         },
       }
     ).then((response) => {
