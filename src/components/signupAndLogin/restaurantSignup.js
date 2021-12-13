@@ -17,7 +17,7 @@ export default function RestaurantSignup() {
   const [showImage, setShowImage] = useState("");
 
   const uploadImage = () => {
-    Axios.withCredentials = true;
+    Axios.defaults.withCredentials = true;
 
     const formData = new FormData();
     formData.append("file", imageSelected);
