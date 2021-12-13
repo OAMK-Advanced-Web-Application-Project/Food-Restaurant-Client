@@ -25,7 +25,12 @@ export default function AddMenuItem(props) {
 
     Axios.post(
       "https://api.cloudinary.com/v1_1/dwbi2ichj/image/upload",
-      formData
+      formData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
     ).then((response) => {
       console.log(response.data.url);
       setShowImageMenu(response.data.url);
@@ -41,6 +46,11 @@ export default function AddMenuItem(props) {
         description: descriptionReg,
         price: priceReg,
         image: showImageMenu,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
       }
     ).then((response) => {
       console.log(showImageMenu);
