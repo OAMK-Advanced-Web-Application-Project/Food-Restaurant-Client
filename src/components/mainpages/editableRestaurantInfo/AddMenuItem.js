@@ -23,7 +23,11 @@ export default function AddMenuItem(props) {
 
     Axios.post(
       "https://api.cloudinary.com/v1_1/dwbi2ichj/image/upload",
-      formData
+      formData, {
+        headers:{
+          Credential: true,
+        }
+      }
     ).then((response) => {
       console.log(response.data.url);
       setShowImageMenu(response.data.url);
@@ -43,13 +47,13 @@ export default function AddMenuItem(props) {
       {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
+          Credential: true,
         },
       }
     ).then((response) => {
       console.log(showImageMenu);
       console.log(response);
       console.log("Menu item added successfully.");
-      alert("Menu item added successfully!");
     });
   };
 

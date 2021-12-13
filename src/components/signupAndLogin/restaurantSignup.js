@@ -17,7 +17,6 @@ export default function RestaurantSignup() {
   const [showImage, setShowImage] = useState("");
 
   const uploadImage = () => {
-    Axios.defaults.withCredentials = true;
 
     const formData = new FormData();
     formData.append("file", imageSelected);
@@ -25,7 +24,11 @@ export default function RestaurantSignup() {
 
     Axios.post(
       "https://api.cloudinary.com/v1_1/dwbi2ichj/image/upload",
-      formData
+      formData, {
+        headers:{
+          Credential: true,
+        }
+      }
     ).then((response) => {
       console.log(response.data.url);
       setShowImage(response.data.url);
@@ -44,6 +47,10 @@ export default function RestaurantSignup() {
         type: typeReg,
         pricelevel: pricelevelReg,
         image: showImage,
+      }, {
+        headers:{
+          Credential: true,
+        }
       }
     ).then((response) => {
       console.log("done");
