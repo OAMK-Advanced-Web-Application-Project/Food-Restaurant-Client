@@ -15,11 +15,10 @@ export default function RestaurantSignup() {
   const [pricelevelReg, setPriceLevel] = useState("");
   const [imageSelected, setImageSelected] = useState("");
   const [showImage, setShowImage] = useState("");
-  
+
   Axios.defaults.withCredentials = false;
 
   const uploadImage = () => {
-
     const formData = new FormData();
     formData.append("file", imageSelected);
     formData.append("upload_preset", "ujyz5zuo");
@@ -45,6 +44,11 @@ export default function RestaurantSignup() {
         type: typeReg,
         pricelevel: pricelevelReg,
         image: showImage,
+      },
+      {
+        headers: {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+        },
       }
     ).then((response) => {
       console.log("done");
