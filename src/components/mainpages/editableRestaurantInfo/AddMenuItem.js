@@ -17,7 +17,6 @@ export default function AddMenuItem(props) {
   const [showImageMenu, setShowImageMenu] = useState("");
 
   const uploadImage = () => {
-    Axios.defaults.withCredentials = true;
 
     const formData = new FormData();
     formData.append("file", imageSelectedMenu);
