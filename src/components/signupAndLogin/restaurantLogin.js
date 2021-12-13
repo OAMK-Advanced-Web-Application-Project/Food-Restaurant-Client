@@ -6,7 +6,7 @@ import Constants from "../Constants.json";
 import jwt from "jsonwebtoken";
 
 export default function RestaurantLogin(props) {
-  Axios.defaults.withCredentials = true;
+  Axios.defaults.withCredentials = false;
 
   const [usernameLog, setUsernameLog] = useState("");
   const [passwordLog, setPasswordLog] = useState("");
