@@ -25,7 +25,12 @@ export default function RestaurantSignup() {
 
     Axios.post(
       "https://api.cloudinary.com/v1_1/dwbi2ichj/image/upload",
-      formData
+      formData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
     ).then((response) => {
       console.log(response.data.url);
       setShowImage(response.data.url);

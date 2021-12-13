@@ -10,12 +10,11 @@ export default function OrdersList() {
   const [orderList, setOrderList] = useState([]);
 
   useEffect(() => {
-    Axios.get(Constants.API_ADDRESS + `/getOrderRestaurant/${id}`).then(
-      (response) => {
+    Axios.get(Constants.API_ADDRESS + `/getOrderRestaurant/${id}`),
+      { headers: { "Content-Type": "application/json" } }.then((response) => {
         console.log(response);
         setOrderList(response.data);
-      }
-    );
+      });
   }, []);
 
   const confirmOrder = (orderid) => {
