@@ -47,7 +47,7 @@ export default function RestaurantSignup() {
       },
       {
         headers: {
-          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+          'Content-Type': 'application/json',
         },
       }
     ).then((response) => {
