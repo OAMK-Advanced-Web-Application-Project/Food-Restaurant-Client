@@ -24,10 +24,7 @@ export default function RestaurantSignup() {
 
     Axios.post(
       "https://api.cloudinary.com/v1_1/dwbi2ichj/image/upload",
-      formData,
-      {
-        credentials: "include",
-      }
+      formData
     ).then((response) => {
       console.log(response.data.url);
       setShowImage(response.data.url);
@@ -46,9 +43,6 @@ export default function RestaurantSignup() {
         type: typeReg,
         pricelevel: pricelevelReg,
         image: showImage,
-      },
-      {
-        credentials: "include",
       }
     ).then((response) => {
       console.log("done");
