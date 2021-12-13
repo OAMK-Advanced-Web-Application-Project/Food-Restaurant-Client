@@ -49,6 +49,7 @@ export default function AddMenuItem(props) {
       console.log(showImageMenu);
       console.log(response);
       console.log("Menu item added successfully.");
+      alert("Menu item added successfully!");
     });
   };
 
